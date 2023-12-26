@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="fragments::pageHeader">
+    <meta charset="ISO-8859-1">
+    <title>Employee Management System</title>
+
+    <style>
+        /* Add this style for the dark violet theme */
+        body {
+            background-color: #4b0082; /* Dark violet background color */
+            color: #fff; /* White text color */
+        }
+
+        .navbar {
+            background-color: #9400d3 !important; /* Dark violet navbar background color */
+        }
+
+        .nav-link {
+            color: #fff !important; /* White text color for navbar links */
+        }
+
+        .nav-link:hover {
+            color: #800080 !important; /* Dark violet text color on hover for navbar links */
+        }
+    </style>
+</head>
+
+<body>
+    <div th:fragment="menu">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                <a routerLink="/index" class="nav-link">Home</a>
+                <a routerLink="/create-employee" class="nav-link">Add Employee</a>
+                <a routerLink="/employee-list" class="nav-link">Emp List</a>
+                <a routerLink="/Aboutus" class="nav-link">Aboutus</a>
+                <a routerLink="/login" class="nav-link">Login</a>
+                <a routerLink="/create-employee" class="nav-link">Sign Up</a>
+            </nav>
+        </header>
+    </div>
+
+    <div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100 img-fluid" style="height: 615px;"
+                        src="https://res.cloudinary.com/people-matters/image/upload/q_auto,f_auto/v1569239438/1569239437.jpg"
+                        alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1 class="text-dark">
+                            <strong>Employee Management System</strong>
+                        </h1>
+                        <p class="text-dark">
+                            <b></b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

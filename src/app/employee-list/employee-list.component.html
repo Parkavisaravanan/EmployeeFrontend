@@ -1,0 +1,64 @@
+<html>
+<style>
+    body, html {
+        /* Add your background image URL here */
+        background-image: url('https://media.istockphoto.com/id/1465568487/photo/colleagues-watching-something-on-laptop-while-at-the-office.webp?b=1&s=170667a&w=0&k=20&c=ZsUmsBtCh9Ta8mnG1blSp6V0EqGclwqRNUQUz9Jft2w='); 
+        /* Set background size to cover the entire page */
+        background-size: cover; 
+        background-attachment: fixed;
+        /* Set background repeat to no repeat */
+        background-repeat: no-repeat; 
+        /* Set background position to center */
+        /* Add some padding to the page */
+        padding: 20px; 
+        /* Set the height of the page to 100% */
+        height:100%; 
+    }
+
+    /* Add additional styling as needed */
+    .col-md-6.offset-md-3 {
+        /* Optionally, you can add a background color to the form container to improve readability */
+        background-color: rgba(255, 255, 255, 0.8);
+        /* Add padding to the form container */
+        padding: 20px;
+    }
+</style>
+<h2>Employee List</h2>
+<div class="search-bar">
+    <input type="text" placeholder="Search employees" [(ngModel)]="searchTerm">
+    <button class="btn btn-primary" (click)="searchEmployees()">Search</button>
+</div>
+<table class="table table-dashed">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Id</th>
+            <th>Education</th>
+            <th>Address</th>
+            <th>Salary</th>
+            <th>Role</th>
+            <th>Actions</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of filteredEmployees">
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.emailId}}</td>
+            <td>{{employee.education}}</td>
+            <td>{{employee.address}}</td>
+            <td>{{employee.salary}}</td>
+            <td>{{employee.role}}</td>
+            
+            <td>
+                <button (click)="updateEmployee(employee.id)" class="btn btn-info">Update</button>
+                <button (click)="deleteEmployee(employee.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>
+                <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left:10px">View</button>
+            </td>
+            <td></td> <!-- Empty cell for spacing -->
+        </tr>
+    </tbody>
+</table>
+</html>
